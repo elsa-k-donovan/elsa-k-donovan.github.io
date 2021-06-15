@@ -11,5 +11,5 @@ indicate the political direction of the underlying data set.
 
 ## Project Structure
 
-The project code is very simplistic and consists of an index.html, stylesheet and simple script. The script will generate a random 
+The project code is consists of an index.html, stylesheet and simple script. The script will generate a random 
 number and load an image to the website. 
