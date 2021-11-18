@@ -5,13 +5,30 @@ html, body{
   margin: 0;
 }
 
+#info-wrapper {
+    position:absolute;
+    display:inline-block;
+    /*bottom:0px;
+    left:0px;
+    left:35%;*/
+    /*top:5%;*/
+    bottom:0px;
+    width:100%;
+    left: 0;
+    height:auto;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .canvas-interactive-wrapper {
     width: 100%;
     height: 100%;
     /* position: relative; */
+    bottom: 10px;
     text-align: center;
     overflow-y: auto;
     overflow-x: auto;
+    position: absolute;
 }
 
 .canvas-interactive-wrapper: after {
@@ -20,12 +37,27 @@ html, body{
   padding-bottom: 100%;
 }
 
-.canvas-interactive-wrapper #canvas-interactive{
+.canvas-interactive-wrapper {
     /* background-size: cover; */
     position: absolute;
     display: block;
     width: 100%;
     height: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: auto;
+    /* margin: 0; */
+}
+
+#canvas-interactive{
+    /* background-size: cover; */
+    /*position: absolute;*/
+    opacity: 100%;
+    display: none;
+    /*width: 100%;*/
+    /*height: 100%;*/
     top: 0;
     right: 0;
     bottom: 0;
@@ -38,7 +70,7 @@ html, body{
 /* fdf */
 
 .canvas-interactive-wrapper  .cta-wrapper{
-    margin-top: 30px;
+    margin-top: 6%;
 }
 
 .canvas-interactive-wrapper h1{
@@ -74,19 +106,21 @@ html, body{
 
 .canvas-interactive-wrapper .cta-wrapper a:hover, a:active{
   border-color: #222;
+    opacity:50%;
+
 }
 .canvas-interactive-wrapper .cta-wrapper a.active {
     border-color: #535157;
 }
 .canvas-interactive-wrapper .cta-wrapper a.active:hover {
   border-color: #222;
+    opacity:90%;
 }
-
-
 
 .canvas-interactive-wrapper .canvas-meme {
   margin-left: auto;
   margin-right: auto;
+    top: 10%;
   width: 25%;
   /* min-width: 256px; */
   background-color: #222;
@@ -109,8 +143,6 @@ html, body{
 }
 
 #text1{
-
-
   margin-left: auto;
   margin-right: auto;
   width: 25%;
@@ -127,8 +159,6 @@ html, body{
 }
 
 #text2{
-
-
   margin-left: auto;
   margin-right: auto;
   width: 25%;

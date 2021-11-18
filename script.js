@@ -2,8 +2,8 @@
 
 window.onload = function(){
 
-var conservativeImgNum = 16;
-var liberalImgNum = 16;
+var conservativeImgNum = 9;
+var liberalImgNum = 9;
 
 
 randomVal = Math.round(Math.random());

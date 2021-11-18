@@ -6,11 +6,66 @@
     <title>Memesthetic</title>
   </head>
   <body>
+  <script src="js/three.js"></script>
 
+  <script>
+      var count = 0;
+      // Our Javascript will go here.
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
+      camera.position.z = 1000;
+      camera.position.y = 540;
+
+      camera.rotation.x = 50;
+
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
+
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+      // const cube = new THREE.Mesh( geometry, material );
+      // scene.add( cube );
+
+      var grid = new THREE.GridHelper(7000, 20);
+
+      grid.rotation.y = Math.PI / 2
+      grid.rotation.z = Math.PI / 2
+
+      scene.add(grid);
+
+      //count= 0;
+      function animate() {
+          requestAnimationFrame( animate );
+
+          if (count < 150){
+              grid.rotation.z += 0.0005;
+          }
+          else if (count===300){
+              count = 0;
+          }
+          else if (count >= 150){
+              grid.rotation.z -= 0.0005;
+          }
+
+
+          count++;
+          //console.log(count)
+
+          renderer.render( scene, camera );
+      };
+      animate();
+
+  </script>
+
+  <div id="info-wrapper" >
+      <img src="logo_warped2.png" width="30%" id="logo" alt="Memesthetic">
+  </div>
 
     <div class="canvas-interactive-wrapper">
     <canvas id="canvas-interactive"></canvas>
-    <h1>Memesthetic</h1>
+<!--    <h1>Memesthetic</h1>-->
         <h4>Sets of 4 AI-generated Memes</h4>
         <div id="overlay">
         <div id="text1">Correct</div>
@@ -22,9 +77,9 @@
     <div class="cta-wrapper">
 
         <!-- <a href="#default-state" id="default-state-cta" class="active">Default state</a> -->
-        <a href="#red-state" id="red-state">Left-Leaning</a>
-        <a href = "#generate" id= "default-state" class="active">Generate Meme</a>
-        <a href="#blue-state" id="blue-state">Right-Leaning</a>
+        <a href="#red-state" id="red-state" style="color: black; background-color: grey">Left-Leaning</a>
+        <a href = "#generate" id= "default-state" class="active" style="color: black; background-color: grey">Generate Meme</a>
+        <a href="#blue-state" id="blue-state" style="color: black; background-color: grey">Right-Leaning</a>
     </div>
     </div>
 
